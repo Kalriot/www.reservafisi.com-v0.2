@@ -1,0 +1,291 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+body {
+    min-height: 100vh;
+    background-color: #e1e5f5;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    z-index: 100;
+}
+
+.menu {
+    position: fixed;
+    top: 10px;
+    left: 270px;
+    right: 10px;
+    height: 80px;
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    background: #340909; /* Ajusta el color y la opacidad del fondo */
+    z-index: 1;
+    border-radius: 16px;
+    transition: 0.4s ease;
+    backdrop-filter: blur(10rem); /* Efecto de vidrio */
+}
+
+.logo-fisi {
+    position: relative;
+    width: 330px;
+    transition: 0.4s ease;
+    margin-left: 25px;
+}
+
+.contenedor_effect.collapsed  {
+    width: 85px;
+}
+
+.sidebar {
+    height: calc(100vh - 32px);
+    background-color: #171725;
+    border-radius: 16px;    
+    box-sizing: border-box;
+    padding: 0;
+    width: 250px;
+    position: fixed;
+    margin: 10px;
+    font-family: "Poppins", sans-serif;
+    backdrop-filter: blur(10rem); /* Efecto de vidrio */ 
+    z-index: 100;
+    transition: 0.4s ease;
+}
+
+
+.sidebar.collapsed {
+    width: 85px;
+    transition: 0.4s ease;
+}
+
+.sidebar.collapsed .sidebar-header .toggler {
+    transform: translate(-64px, 70px);
+}
+
+
+.sidebar-header {
+    position: relative;
+    display: flex;
+    padding: 10px 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+
+.sidebar-header .header-logo img {
+    width: 90px;
+    height: 90px;
+    display: block;
+    object-fit: contain;
+    border-radius: 50%;
+    margin-left: -21px;
+}
+
+
+
+
+.sidebar-header .toggler{
+    height: 35px;
+    width: 35px;
+    border: none;
+    cursor: pointer;
+    color: #151a2D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: #fff;
+    transition: 0.4s ease;
+    margin-right: 5px;
+}
+
+.sidebar-header .toggler:hover {
+    background: #dde4fb;
+}
+
+.sidebar-header .toggler span {
+    font-size: 1.75rem;
+}
+
+.sidebar-nav .nav-link{
+    color: #fff;
+    display: flex;
+    text-decoration: none;
+    gap: 12px;
+    white-space: nowrap;
+    padding: 12px 15px;
+    align-items: center;
+    transition: 0.4s ease;
+    border-radius: 8px;
+}
+
+.sidebar.collapsed .sidebar-header .toggler svg {
+    transform: rotate(180deg);
+}
+
+.sidebar-nav .nav-list {
+    list-style: none;
+    display: flex;
+    gap: 4px;
+    padding: 0 15px;
+    flex-direction: column;
+    margin-top: 10px;
+    transition: 0.4s ease;
+}
+
+.sidebar.collapsed .sidebar-nav .primary-nav {
+    transform: translateY(55px);
+
+}
+
+.sidebar-nav .nav-link:hover {
+    background: #fff;
+    color: #151a2D;
+}
+
+.sidebar-nav .nav-link .nav-label {
+    transition: 0.1s ease;
+    z-index: 1;
+}
+
+.sidebar.collapsed .sidebar-nav .nav-link .nav-label {
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.sidebar-nav .nav-item {
+    position: relative;
+}
+
+.sidebar-nav .nav-tooltip {
+    position: absolute;
+    top: -10px;
+    opacity: 0;
+    display: none;
+    pointer-events: none;
+    left: calc(100% + 25px);
+    background: #151a2D;
+    padding: 6px 12px;
+    border-radius: 8px;
+    white-space: nowrap;
+    color: #fff;
+    box-shadow: 0 5px 10px rgba(0 , 0, 0, 0.1);
+    z-index: 9999;
+    
+}
+
+.sidebar.collapsed .sidebar-nav .nav-tooltip {
+    display: block;
+}
+
+.sidebar-nav .nav-item:hover .nav-tooltip {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(50%);
+    transition: 0.4s ease;
+}
+
+.sidebar-nav .secondary-nav {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    padding: 0 15px; 
+    
+}
+
+.menu.collapsed {
+    left: 105px;
+}
+
+
+.cont {
+    margin: 100px 5px 20px 270px; /* márgenes: arriba, derecha, abajo, izquierda */
+    width: calc(100% - 280px); /* ancho relativo al contenedor, ajustado al margen izquierdo y derecho */
+    max-width: 1420px; /* límite máximo de ancho */
+    background: white;
+    border-radius: 20px;
+    transition: 0.4s ease;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.cont .row{
+    padding: 35px 40px;
+    transition: 0.4s ease;
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.cont.collapsed {
+    margin: 100px 5px 20px 105px; /* margen ajustado al estado collapsed */
+    width: calc(100% - 110px); /* ancho adaptado al margen izquierdo (105px) y derecho (5px) */
+    max-width: 1590px; /* límite máximo de ancho en el estado collapsed */
+    transition: 0.4s ease; /* transición suave */
+    box-sizing: border-box; /* incluye padding y bordes en el ancho */
+}
+
+.cont .row.collapsed {
+    max-width: 1420px;
+    z-index: 0;
+}
+
+.sidebar_effect  {
+    background: rgba(255, 255, 255, 0.3); /* Ajusta el color y la opacidad del fondo */
+    backdrop-filter: blur(10rem); /* Efecto de vidrio */
+    transition: 0.4s ease;
+}
+
+#calendar {
+    max-height: 520px;
+}
+
+.modal-body .row dt,.modal-body .row dd {
+    display: flex;
+    align-items: center; /* Alinea verticalmente el contenido */
+    margin-bottom: 10px;  /* Espaciado entre filas */
+}
+
+.modal-body .row dd {
+    word-wrap: break-word; /* Divide palabras largas */
+    overflow-wrap: break-word; /* Maneja contenido largo */
+    white-space: normal; /* Permite saltos de línea */
+    display: block; /* Permite crecimiento vertical */
+    padding: 5px; /* Añade espacio interno */
+    border-radius: 5px; /* Bordes redondeados */
+}
+.modal-body .row {
+    padding: 10px 20px;
+}
+
+.modal-header {
+    position: relative; /* Establece el contenedor como relativo para el posicionamiento del botón */
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+}
+
+.btn-close {
+    position: absolute;
+    right: 40px; /* Coloca el botón en la esquina derecha */
+}
+
+
+@media (max-width: 768px) {
+    .cont {
+        margin: 50px 10px; /* Márgenes ajustados */
+        width: auto; /* Toma todo el ancho disponible */
+    }
+}
+
+@media (max-width: 768px) {
+    .cont.collapsed {
+        margin: 50px 10px;
+        width: auto;
+    }
+}
+

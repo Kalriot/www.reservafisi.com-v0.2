@@ -1,0 +1,38 @@
+
+body {
+    min-height: 100vh;
+    background-color: #f5e1e1;
+}
+
+.container-reservas {
+    margin: 100px 5px 20px 270px; /* márgenes: arriba, derecha, abajo, izquierda */
+    width: calc(100% - 280px); /* ancho relativo al contenedor, ajustado al margen izquierdo y derecho */
+    max-width: 1420px; /* límite máximo de ancho */
+    background: white;
+    border-radius: 20px;
+    transition: 0.4s ease;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.container-fluid .row{
+    padding: 35px 40px;
+    transition: 0.4s ease;
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.container-fluid.collapsed {
+    margin: 100px 5px 20px 105px; /* margen ajustado al estado collapsed */
+    width: calc(100% - 110px); /* ancho adaptado al margen izquierdo (105px) y derecho (5px) */
+    max-width: 1590px; /* límite máximo de ancho en el estado collapsed */
+    transition: 0.4s ease; /* transición suave */
+    box-sizing: border-box; /* incluye padding y bordes en el ancho */
+}
+
+.container-fluid .row.collapsed {
+    max-width: 1420px;
+    z-index: 0;
+}
